@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Player</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: whitesmoke;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .audio-player {
+            max-width: 400px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        .audio-player audio {
+            width: 100%;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            outline: none;
+        }
+        .audio-player img {
+            max-width: 100%;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .audio-player h2 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+        .audio-player p {
+            color: #666666;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="audio-player">
+        <img src="./music/11108199-f4095b2b.jpeg" alt="Album Cover">
+        <h2>Jaden - On My Own (feat. Kid Cudi)</h2>
+        <p>From Marvel's Spider-Man: Miles Morales OST</p>
+        <audio controls>
+            <source src="./music/Y2meta.app - Jaden - On My Own (feat. Kid Cudi) _ Marvel's Spider-Man_ Miles Morales OST (128 kbps).mp3" type="audio/mpeg">
+            Your browser does not support the audio element.
+        </audio>
+    </div>
+</body>
+</html>
