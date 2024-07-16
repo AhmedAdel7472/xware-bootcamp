@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Survey Form</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+        /* Reset some default styles */
+        body, html {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: #2d9413;
+        }
+
+        /* Container for the form */
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        /* Headings */
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        b {
+            font-weight: bold;
+        }
+
+        /* Inputs and Select */
+        input[type="text"],
+        input[type="email"],
+        textarea,
+        select {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        input[type="range"] {
+            width: 100%;
+        }
+
+        /* Radio Buttons and Checkboxes */
+        input[type="radio"],
+        input[type="checkbox"] {
+            margin-right: 5px;
+        }
+
+        /* Button */
+        button[type="button"],
+        input[type="submit"] {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            border-radius: 4px;
+        }
+
+        button[type="button"]:hover,
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+
+        /* Textarea */
+        textarea {
+            width: calc(100% - 12px);
+            padding: 8px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 16px;
+        }
+
+        /* Radio and Checkbox Labels */
+        label {
+            display: inline-block;
+            margin-bottom: 5px;
+        }
+
+        /* Form layout adjustments */
+        form {
+            margin-bottom: 20px;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            background-color: #333;
+            color: #fff;
+            padding: 10px 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Survey Form</h1>
+
+        <b>Your Name</b><br>
+        <input id="Name" name="Name" value="" type="text"><br>
+
+        <b>Your Age</b><br>
+        <input id="Age" name="Age" value="" type="text"><br>
+
+        <b>Your Email</b><br>
+        <input id="Email" name="Email" value="" type="email"><br><br>
+
+        <b>Front End or Back End</b><br><br>
+        <select id="textOptions">
+            <option value="" disabled selected>choose here</option>
+            <option value="BackEnd">BackEnd</option>
+            <option value="FrontEnd">FrontEnd</option>
+            <!-- Add more options as needed -->
+        </select><br><br>
+
+        <b>Rate Your Experience with us from 1 to 10</b><br><br>
+        <input type="range"><br><br>
+
+        <b>Tell us about your Favorite Hobby</b><br><br>
+        <input name="Hobby" value="" type="text"><br><br>
+
+        <b>What are your future Goals from this Bootcamp</b><br><br>
+        <textarea name="futureGoal" id="" rows="5"></textarea><br><br>
+
+        <b>How did you know about us?</b><br><br>
+        <label for="facebook">Facebook</label>
+        <input id="facebook" name="rate" value="Facebook" type="radio"><br>
+        <label for="twitter">Twitter</label>
+        <input id="twitter" name="rate" value="Twitter" type="radio"><br>
+        <label for="instagram">Instagram</label>
+        <input id="instagram" name="rate" value="Instagram" type="radio"><br>
+        <label for="events">Events</label>
+        <input id="events" name="rate" value="Events" type="radio"><br>
+        <label for="other">Other</label>
+        <input id="other" name="rate" value="Other" type="radio"><br><br>
+
+        <b>Write about how you knew us</b><br><br>
+        <textarea name="Other" id="" rows="5"></textarea><br><br>
+
+        <p>Select your preferences:</p>
+        <form id="checkboxForm">
+            <input type="checkbox" id="check1" name="interest" value="JavaScript">
+            <label for="check1">JavaScript</label><br>
+
+            <input type="checkbox" id="check2" name="interest" value="Python">
+            <label for="check2">Python</label><br>
+
+            <input type="checkbox" id="check3" name="interest" value="HTML/CSS">
+            <label for="check3">HTML/CSS</label><br>
+
+            <input type="checkbox" id="check4" name="interest" value="React.js">
+            <label for="check4">React.js</label><br>
+
+            <!-- Add more checkboxes as needed -->
+
+            <br>
+        </form>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 xWARE. All rights reserved.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <style>
+        /* General body styles */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0; /* Light gray background */
+        }
+
+        /* Top navigation styles */
+        .topnav {
+            background-color: #333; /* Dark background for top navigation */
+            overflow: hidden;
+        }
+
+        .topnav a {
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        .topnav a.active {
+            background-color: #4CAF50; /* Green active link */
+        }
+
+        .topnav a:hover {
+            background-color: #555; /* Darker hover color */
+        }
+
+        /* Hero section styles */
+        .hero-image {
+            position: relative;
+            text-align: center;
+            padding: 100px 0; /* Increased padding */
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/IMG_0933.jpg') center center/cover no-repeat;
+            color: white;
+        }
+
+        .profile-image {
+            border-radius: 50%;
+            width: 200px;
+            height: 200px;
+            object-fit: cover; /* Ensure the image covers the entire space */
+            border: 5px solid white; /* Optional: White border around profile image */
+            margin-bottom: 20px;
+        }
+
+        .hero-image h1 {
+            font-size: 36px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+        }
+
+        .hero-image p {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8); /* Faded white text */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Text shadow for better visibility */
+        }
+
+        .hero-image button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            margin-top: 20px;
+            cursor: pointer;
+            transition: background-color 0.3s ease; /* Smooth transition */
+        }
+
+        .hero-image button:hover {
+            background-color: #45a049;
+        }
+
+        /* Footer styles */
+        .footer {
+            position: fixed;
+            left: 0;
+            bottom: 0;
+            width: 100%;
+            background-color: #333; /* Dark background for footer */
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+        }
+
+        .footer p {
+            margin: 0;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="topnav">
+        <a class="active" href="#home">Home</a>
+        <a href="#news">News</a>
+        <a href="#contact">Contact</a>
+        <a href="./about.html" target="_blank">About</a>
+    </div>
+
+    <div class="hero-image">
+        <img class="profile-image" src="./images/IMG_0933.jpg" alt="Your Photo">
+        <h1>I am Ahmed Adel</h1>
+        <p>And I'm a Software Engineer</p>
+        <a href="https://www.linkedin.com/in/ahmed-adel-8a091727b" target="_blank" class="button">LinkedIn</a>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 Xware. All rights reserved.</p>
+    </div>
+</body>
+</html>
