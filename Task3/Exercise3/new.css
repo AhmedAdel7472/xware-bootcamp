@@ -1,11 +1,15 @@
-<!DOCTYPE html>
+/*<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ahmed Adel - Portfolio</title>
-    <style>
-        /* General styles */
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Landing Page P1</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Ahmed Adel, Software Engineer specializing in web development.">
+    <meta name="keywords" content="software engineer, web developer, HTML, CSS, JavaScript">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">*/
+<style>
+        /* General body styles */
         body {
             margin: 0;
             padding: 0;
@@ -19,6 +23,7 @@
             background-color: #333; /* Dark background for top navigation */
             overflow: hidden;
             box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+            animation: slideDown 1s ease-out;
         }
 
         .topnav a {
@@ -28,7 +33,7 @@
             text-align: center;
             padding: 14px 16px;
             text-decoration: none;
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .topnav a.active {
@@ -37,6 +42,16 @@
 
         .topnav a:hover {
             background-color: #555; /* Darker hover color */
+            transform: scale(1.1); /* Slightly scale up on hover */
+        }
+
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
         }
 
         /* Hero section styles */
@@ -47,6 +62,7 @@
             background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('./images/IMG_0933.jpg') center center/cover no-repeat;
             color: white;
             overflow: hidden;
+            animation: fadeIn 2s ease-in;
         }
 
         .profile-image {
@@ -67,6 +83,7 @@
             font-size: 48px;
             margin: 20px 0;
             text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* Text shadow for better visibility */
+            animation: slideUp 1s ease-out;
         }
 
         .hero-image p {
@@ -74,6 +91,7 @@
             color: rgba(255, 255, 255, 0.9); /* Faded white text */
             text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8); /* Text shadow for better visibility */
             margin-bottom: 40px;
+            animation: slideUp 1.5s ease-out;
         }
 
         .hero-image a.button {
@@ -88,11 +106,30 @@
             margin-top: 20px;
             border-radius: 4px;
             box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
-            transition: background-color 0.3s ease;
+            transition: background-color 0.3s ease, transform 0.3s ease;
         }
 
         .hero-image a.button:hover {
             background-color: #45a049;
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes slideUp {
+            from {
+                transform: translateY(100%);
+            }
+            to {
+                transform: translateY(0);
+            }
         }
 
         /* Main content sections */
@@ -103,6 +140,7 @@
             max-width: 800px;
             box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
             border-radius: 8px;
+            animation: fadeIn 2s ease-in;
         }
 
         section h2 {
@@ -120,7 +158,7 @@
 
         /* Portfolio styles */
         #portfolio {
-            background-color: #f2f2f2; /* Light gray background */
+            background-color: #fff;
             padding: 60px 20px;
             margin: 20px auto;
             max-width: 1200px;
@@ -135,31 +173,28 @@
             margin-bottom: 20px;
         }
 
+        #portfolio p {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 40px;
+        }
+
         .project-card {
             display: inline-block;
             width: 300px;
             margin: 10px;
             padding: 20px;
-            background-color: #fff; /* White background for project cards */
+            background-color: #f9f9f9;
             border: 1px solid #ddd;
             border-radius: 8px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             text-align: left;
-            transition: transform 0.3s ease; /* Smooth transform animation */
-        }
-
-        .project-card:hover {
-            transform: translateY(-10px); /* Move up on hover */
+            transition: transform 0.3s ease;
         }
 
         .project-card img {
             width: 100%;
             border-radius: 4px;
-            transition: transform 0.3s ease; /* Smooth transform animation */
-        }
-
-        .project-card:hover img {
-            transform: scale(1.1); /* Scale up image on hover */
         }
 
         .project-card h3 {
@@ -173,9 +208,13 @@
             color: #666;
         }
 
+        .project-card:hover {
+            transform: scale(1.05);
+        }
+
         /* Skills styles */
         #skills {
-            background-color: #f2f2f2; /* Light gray background */
+            background-color: #fff;
             padding: 60px 20px;
             margin: 20px auto;
             max-width: 800px;
@@ -199,16 +238,16 @@
             font-size: 18px;
             color: #666;
             margin: 10px 0;
-            transition: transform 0.3s ease; /* Smooth transform animation */
+            transition: transform 0.3s ease;
         }
 
         #skills li:hover {
-            transform: scale(1.1); /* Scale up on hover */
+            transform: translateX(10px);
         }
 
         /* Contact Me styles */
         #contact {
-            background-color: #f2f2f2; /* Light gray background */
+            background-color: #fff;
             padding: 60px 20px;
             margin: 20px auto;
             max-width: 800px;
@@ -226,6 +265,7 @@
         #contact form {
             max-width: 600px;
             margin: 0 auto;
+            animation: fadeIn 2s ease-in;
         }
 
         #contact label {
@@ -247,228 +287,76 @@
         #contact button {
             background-color: #4CAF50;
             color: white;
-            border: none;
+            border:
+            none;
             padding: 12px 24px;
             text-align: center;
             text-decoration: none;
             display: inline-block;
             font-size: 18px;
             border-radius: 4px;
-            box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-            transition: background-color 0.3s ease;
+            box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            cursor: pointer; /* Add cursor pointer */
         }
 
         #contact button:hover {
             background-color: #45a049;
-        }
-
-        /* Footer styles */
-        .footer {
-            position: fixed;
-            left: 0;
-            bottom: 0;
-            width: 100%;
-            background-color: #333; /* Dark background for footer */
-            color: white;
-            text-align: center;
-            padding: 10px 0;
-            font-size: 14px;
-        }
-
-        .footer p {
-            margin: 0;
-        }
-
-        /* Responsive design */
-        @media (max-width: 1024px) {
-            .hero-image {
-                padding: 120px 0;
-            }
-
-            .hero-image h1 {
-                font-size: 42px;
-            }
-
-            .hero-image p {
-                font-size: 18px;
-            }
-
-            .profile-image {
-                width: 180px;
-                height: 180px;
-            }
-
-            .topnav a {
-                padding: 12px 14px;
-            }
-
-            section h2 {
-                font-size: 24px;
-            }
-
-            section p {
-                font-size: 15px;
-            }
-
-            .project-card {
-                width: 250px;
-            }
-
-            #skills li {
-                font-size: 16px;
-            }
+            transform: scale(1.1);
         }
 
         @media (max-width: 768px) {
+            /* Responsive adjustments for section padding */
+            section {
+                padding: 40px 10px;
+            }
+
+            /* Responsive adjustments for hero section padding */
             .hero-image {
                 padding: 100px 0;
             }
 
-            .hero-image h1 {
-                font-size: 36px;
-            }
-
-            .hero-image p {
-                font-size: 16px;
-            }
-
+            /* Responsive adjustments for profile image size */
             .profile-image {
                 width: 150px;
                 height: 150px;
             }
 
-            .topnav {
-                padding-top: 10px;
-            }
-
+            /* Responsive adjustments for top navigation links */
             .topnav a {
                 padding: 10px 12px;
             }
-
-            section {
-                padding: 40px 10px;
-                margin: 10px;
-            }
-
-            section h2 {
-                font-size: 22px;
-            }
-
-            section p {
-                font-size: 14px;
-            }
-
-            .project-card {
-                width: 200px;
-            }
-
-            #skills li {
-                font-size: 14px;
-            }
         }
 
-        @media (max-width: 480px) {
-            .hero-image {
-                padding: 80px 0;
-            }
-
-            .hero-image h1 {
-                font-size: 28px;
-            }
-
-            .hero-image p {
-                font-size: 14px;
-            }
-
-            .profile-image {
-                width: 120px;
-                height: 120px;
-            }
-
-            .topnav a {
-                padding: 8px 10px;
-                font-size: 12px;
-            }
-
-            section {
-                padding: 30px 10px;
-                margin: 5px;
-            }
-
-            section h2 {
-                font-size: 20px;
-            }
-
-            section p {
-                font-size: 13px;
-            }
-
+        /* Responsive adjustments for project cards */
+        @media (max-width: 600px) {
             .project-card {
-                width: 150px;
-            }
-
-            #skills li {
-                font-size: 12px;
+                width: calc(100% - 20px);
             }
         }
-    </style>
-</head>
+</style>
+/*</head>
 <body>
-    <div class="topnav">
-        <a class="active" href="#home">Home</a>
+    <div class="topnav" id="myTopnav">
+        <a href="#home" class="active">Home</a>
         <a href="#portfolio">Portfolio</a>
         <a href="#skills">Skills</a>
         <a href="#contact">Contact</a>
+        <a href="javascript:void(0);" style="font-size:15px;" class="icon" onclick="toggleMenu()">&#9776;</a>
     </div>
 
-    <div class="hero-image">
-        <img class="profile-image" src="./images/IMG_0933.jpg" alt="Your Photo">
-        <h1>I am Ahmed Adel</h1>
-        <p>And I'm a Software Engineer</p>
-        <a href="https://www.linkedin.com/in/ahmed-adel-8a091727b" target="_blank" class="button">LinkedIn</a>
-    </div>
+    <!-- Rest of the HTML content (sections, hero image, portfolio, skills, contact form, etc.) -->
 
-    <section id="portfolio">
-        <h2>Projects Portfolio</h2>
-        <p>Here are some projects I've worked on:</p>
-        <div class="project-card">
-            <img src="https://via.placeholder.com/300x200" alt="Back End Projects">
-            <h3>Back End</h3>
-            <p>Brief description of Project 1.</p>
-        </div>
-        <div class="project-card">
-            <img src="https://via.placeholder.com/300x200" alt="Machine Learning">
-            <h3>Machine Learning</h3>
-            <p>Brief description of Project 2.</p>
-        </div>
-        <!-- Add more project cards as needed -->
-    </section>
-
-    <section id="skills">
-        <h2>Skills</h2>
-        <ul>
-            <li>JavaScript</li>
-            <li>Python</li>
-            <li>HTML/CSS</li>
-            <!-- Add more skills -->
-        </ul>
-    </section>
-
-    <section id="contact">
-        <h2>Contact Me</h2>
-        <form action="submit.php" method="post">
-            <label for="name">Name:</label>
-            <input type="text" id="name" name="name" required><br><br>
-            <label for="email">Email:</label>
-            <input type="email" id="email" name="email" required><br><br>
-            <label for="message">Message:</label><br>
-            <textarea id="message" name="message" rows="4" required></textarea><br><br>
-            <button type="submit">Send Message</button>
-        </form>
-    </section>
-
-    <div class="footer">
-        <p>&copy; 2024 Xware. All Rights Reserved.</p>
-    </div>
+    <script>
+        function toggleMenu() {
+            var x = document.getElementById("myTopnav");
+            if (x.className === "topnav") {
+                x.className += " responsive";
+            } else {
+                x.className = "topnav";
+            }
+        }
+    </script>
 </body>
 </html>
+*/
