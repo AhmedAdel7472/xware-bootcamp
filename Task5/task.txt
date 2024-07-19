@@ -1,0 +1,89 @@
+-- SQL Task
+-- Students 
+-- id,name
+
+-- StudentDetails (one to one with the student)
+-- SSN (National Number),age,ForiegnId,Email,GPA,Dept,phone number
+
+-- Teachers
+-- id,Name,email
+
+-- courses (one to many with teachers)
+-- id,name,teacherid
+
+-- Enrollments  (many to many with students and courses)
+-- , enrollment_date DATE,
+
+
+-- Create the tables:
+create table Student(
+ Student_id serial primary key,
+ Student_name varchar(50) not null);
+CREATE TABLE StudentDetails (
+SSN VARCHAR(50) PRIMARY KEY NOT NULL,
+Age INT NOT NULL,
+email VARCHAR(70) NOT NULL,
+ GPA FLOAT NOT NULL,
+ department VARCHAR(50) NOT NULL, 
+phone_number VARCHAR(30) NOT NULL,
+student_id INT UNIQUE NOT NULL,
+FOREIGN KEY (student_id) REFERENCES Student(student_id));
+create table Teacher(
+teacher_id serial primary key,
+teacher_name varchar(50) not null,
+email varchar(70) not null);
+create table course(
+course_id varchar(50) primary key,
+course_name varchar(50),
+teacher_id int unique not null,
+FOREIGN KEY (teacher_id) REFERENCES Teacher(teacher_id));
+create table enrollments(
+student_id int unique not null,
+course_id varchar(50) unique not null,
+FOREIGN KEY (student_id) REFERENCES Student(student_id), 
+FOREIGN KEY (course_id) REFERENCES course(course_id));
+
+
+
+
+
+-- Insert data into the tables:
+INSERT INTO Student (Student_id, Student_name)
+VALUES (1, 'John Doe'),
+       (2, 'Jane Smith'),
+       (3, 'Michael Johnson');
+INSERT INTO StudentDetails (SSN, Age, email, GPA, department, phone_number, student_id)
+VALUES ('123-45-6789', 20, 'john.doe@example.com', 3.5, 'Computer Science', '123-456-7890', 1),
+       ('234-56-7890', 21, 'jane.smith@example.com', 3.8, 'Biology', '234-567-8901', 2),
+       ('345-67-8901', 22, 'michael.johnson@example.com', 3.6, 'History', '345-678-9012', 3);
+
+
+INSERT INTO Teacher (teacher_id, teacher_name, email)
+VALUES (1, 'Professor Green', 'pgreen@example.com'),
+       (2, 'Dr. Lee', 'dlee@example.com'),
+       (3, 'Ms. White', 'mwhite@example.com');
+INSERT INTO Course (course_id, course_name, teacher_id)
+VALUES ('CS101', 'Introduction to Computer Science', 1),
+       ('BIO201', 'Biology Foundations', 2),
+       ('HIS301', 'World History', 3);
+INSERT INTO Enrollments (student_id, course_id)
+VALUES (1, 'CS101'),
+       (2, 'BIO201'),
+       (3, 'HIS301');
+
+-- Query the data :-
+
+-- 1-Retrieve all students along with their details.
+select (select student_name from Student where Student.student_id=StudentDetails.student_id),SSN,Age,email,GPA,department,phone_number from StudentDetails;
+-- 2-Retrieve all courses along with the teacher who teaches them.
+select (
+select teacher_name from Teacher where Teacher.teacher_id=Course.teacher_id)
+as teacher_name,
+course_id,course_name from Course;
+-- 3-Retrieve all enrollments showing which students are enrolled in which courses.
+Select (
+Select student_name from Student
+where Student.student_id=Enrollments.student_id)
+,(Select course_name from Course
+where Course.course_id= Enrollments.course_id)
+from Enrollments;
